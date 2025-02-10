@@ -240,9 +240,7 @@ mark {
     margin-bottom: 0;
 }
 
-.bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-}
+
 
 .text-color {
     color: #0f9d58 !important;
@@ -551,21 +549,16 @@ header .go-back i {
 }
 
 .bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
-}
-
-.bg-cover:before,
-.bg-cover:after {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: block;
-    left: 0;
-    top: 0;
-    content: "";
-}
+    /* 删除或注释掉动画属性 */
+    /* animation: rainbow 60s infinite; */
+  }
+  
+  .bg-cover:before,
+  .bg-cover:after {
+    /* 可以完全删除这两个伪元素，或保留结构但移除颜色覆盖 */
+    content: none; /* 直接禁用覆盖层 */
+  }
+  
 
 .bg-cover .container {
     position: relative;
