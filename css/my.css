@@ -1,0 +1,27 @@
+/* 添加在文件末尾 */
+body {
+    color: #ADD8E6 !important;
+    transition: color 0.3s ease; /* 添加过渡动画 */
+}
+
+body:hover {
+    color: rgba(173, 216, 230, 0.7) !important; /* 使用rgba透明度 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #87CEFA !important;
+    transition: color 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    color: #B0E2FF !important; /* 更浅的蓝色 */
+}
+
+a {
+    color: #B0E0E6 !important;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #CAF0F8 !important; /* 浅天蓝色 */
+}

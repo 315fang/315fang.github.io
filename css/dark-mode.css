@@ -1,0 +1,56 @@
+.dark-mode {
+  --bg-color: #000000;
+  --text-color: #e0e0e0;
+  --link-color: #4a9eff;
+  --border-color: #2a2a2a;
+  --card-bg: #1a1a1a;
+  --code-bg: #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dark-mode .card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.dark-mode pre, .dark-mode code {
+  background-color: var(--code-bg);
+}
+
+.dark-mode a {
+  color: var(--link-color);
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background-color: #444;
+}
+
+.dark-mode .dark-mode-toggle {
+  background-color: #444;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+  background-color: #555;
+}
