@@ -5,12 +5,18 @@
   --border-color: #2a2a2a;
   --card-bg: #1a1a1a;
   --code-bg: #2a2a2a;
+  --hover-text-color: #a8d8ff; /* 添加鼠标悬停文本颜色变量 */
   transition: all 0.3s ease;
 }
 
 body.dark-mode {
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+body.dark-mode:hover {
+  color: var(--hover-text-color);
 }
 
 .dark-mode .card {
@@ -24,6 +30,27 @@ body.dark-mode {
 
 .dark-mode a {
   color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+.dark-mode a:hover {
+  color: var(--hover-text-color);
+}
+
+.dark-mode p, .dark-mode span, .dark-mode div {
+  transition: color 0.3s ease;
+}
+
+.dark-mode p:hover, .dark-mode span:hover, .dark-mode div:hover {
+  color: var(--hover-text-color);
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+  transition: color 0.3s ease;
+}
+
+.dark-mode h1:hover, .dark-mode h2:hover, .dark-mode h3:hover, .dark-mode h4:hover, .dark-mode h5:hover, .dark-mode h6:hover {
+  color: var(--hover-text-color);
 }
 
 .dark-mode-toggle {
