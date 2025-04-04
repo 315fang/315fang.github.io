@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, UN-lib">
+    <meta name="keywords" content="分类, SN-lib">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类 | UN-lib</title>
+    <title>分类 | SN-lib</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -51,7 +51,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <span class="logo-span">UN-lib</span>
+                    <span class="logo-span">SN-lib</span>
                 </a>
             </div>
             
@@ -137,7 +137,7 @@
 
     <div class="mobile-head bg-color">
         
-        <div class="logo-name">UN-lib</div>
+        <div class="logo-name">SN-lib</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -297,7 +297,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                  USUT noname library
+                  SUST noname library
                 
             </div>
 
@@ -424,6 +424,217 @@
 
 
     <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+    
+    
+    /* 隐藏左侧吸底播放器 */
+    .aplayer.aplayer-fixed {
+        display: none !important;
+    }
+</style>
+<!-- 左侧吸底播放器已被隐藏 -->
+<div style="display: none;">
+    <div class="">
+        
+        <div class="row">
+            <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                    server="netease"
+                    type="playlist"
+                    id="503838841"
+                    fixed='true'
+                    autoplay='false'
+                    theme='#42b983'
+                    loop='all'
+                    order='random'
+                    preload='auto'
+                    volume='0.7'
+                    list-folded='true'
+            >
+            </meting-js>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<div class="music-player fixed">
+    <div class="cover-container">
+        <img src="/medias/music-cover.jpg" class="cover" id="music-cover">
+    </div>
+    <div class="player-controls">
+        <audio id="music-player" loop>
+            <source src="/medias/background.mp3" type="audio/mpeg">
+        </audio>
+        <div class="progress-container">
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <div class="time-display">
+                <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="play-btn"><i class="fas fa-play"></i></button>
+            <button id="volume-btn"><i class="fas fa-volume-up"></i></button>
+            <input type="range" id="volume-control" min="0" max="100" value="50">
+        </div>
+    </div>
+</div>
+
+<style>
+.music-player.fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999; /* 确保在最上层 */
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+.cover-container {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: rotate 10s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.player-controls {
+    flex: 1;
+}
+.progress-container {
+    margin: 5px 0;
+}
+.progress-container input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+}
+.buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+#volume-control {
+    width: 80px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('music-player');
+    const cover = document.getElementById('music-cover');
+    const playBtn = document.getElementById('play-btn');
+    const volumeBtn = document.getElementById('volume-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const volumeControl = document.getElementById('volume-control');
+    const currentTimeEl = document.getElementById('current-time');
+    const totalTimeEl = document.getElementById('total-time');
+
+    // 加载音频元数据
+    audio.addEventListener('loadedmetadata', function() {
+        totalTimeEl.textContent = formatTime(audio.duration);
+    });
+
+    // 播放/暂停控制
+    playBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            cover.style.animationPlayState = 'running';
+        } else {
+            audio.pause();
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            cover.style.animationPlayState = 'paused';
+        }
+    });
+
+    // 进度条控制
+    audio.addEventListener('timeupdate', function() {
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+    });
+
+    progressBar.addEventListener('input', function() {
+        audio.currentTime = (progressBar.value / 100) * audio.duration;
+    });
+
+    // 音量控制
+    volumeControl.addEventListener('input', function() {
+        audio.volume = volumeControl.value / 100;
+        if (audio.volume === 0) {
+            volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        } else {
+            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        }
+    });
+
+    volumeBtn.addEventListener('click', function() {
+        if (audio.volume > 0) {
+            audio.volume = 0;
+            volumeControl.value = 0;
+            volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        } else {
+            audio.volume = 0.5;
+            volumeControl.value = 50;
+            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        }
+    });
+
+    // 格式化时间显示
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+});
+</script>
+
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
