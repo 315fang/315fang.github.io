@@ -1,0 +1,197 @@
+/**
+ * 性能优化CSS
+ * 用于提升博客加载和渲染性能的样式优化
+ */
+
+/* 启用内容可见性提示，减少重排范围 */
+.article {
+  contain: content;
+}
+
+.card {
+  contain: layout style paint;
+}
+
+/* 使用will-change提示浏览器哪些元素会变化 */
+.top-scroll {
+  will-change: transform, opacity;
+}
+
+.progress-bar {
+  will-change: width;
+}
+
+/* 使用GPU加速的动画 */
+.animated {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* 优化图片淡入效果 */
+img.lazy-loaded {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 减少动画模式 */
+.reduce-animation * {
+  transition-duration: 0.1s !important;
+  animation-duration: 0.1s !important;
+}
+
+.reduce-animation .animated {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+/* 优化搜索结果渲染 */
+.search-result-list {
+  contain: content;
+}
+
+.search-result-item {
+  contain: layout style;
+}
+
+/* 骨架屏样式 */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 图片和iframe懒加载样式 */
+img[loading="lazy"],
+iframe[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded,
+iframe[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* 优化滚动性能 */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* 针对移动设备的优化 */
+@media (max-width: 768px) {
+  /* 减少移动端动画复杂度 */
+  .animated {
+    animation-duration: 0.5s !important;
+  }
+  
+  /* 简化移动端阴影效果 */
+  .card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* 优化移动端触摸目标大小 */
+  .nav-menu a,
+  .sidenav a,
+  .btn,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* 优化打印样式，减少不必要的资源加载 */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* 优化字体渲染 */
+body {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 针对高分辨率屏幕的优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    font-weight: 300;
+  }
+}
+
+/* 优化表单元素 */
+input, textarea, select {
+  will-change: transform;
+  transition: transform 0.3s ease;
+}
+
+/* 优化搜索高亮效果 */
+.search-keyword {
+  background-color: rgba(255, 230, 0, 0.5);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* 优化代码块显示 */
+pre, code {
+  max-height: 600px;
+  overflow: auto;
+  contain: content;
+}
+
+/* 优化图片显示 */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 响应式图片容器 */
+.responsive-img-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 常见的图片比例预设 */
+.aspect-16-9 {
+  padding-bottom: 56.25%;
+}
+
+.aspect-4-3 {
+  padding-bottom: 75%;
+}
+
+.aspect-1-1 {
+  padding-bottom: 100%;
+}
+
+.responsive-img-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
