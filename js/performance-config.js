@@ -1,195 +1,73 @@
 /**
- * 博客性能优化配置文件
- * 用于集中管理性能优化相关的设置
+ * 性能优化配置文件
+ * 集中管理所有性能优化设置，方便根据需求调整优化参数
  */
 
-const PerformanceConfig = {
-  // 延迟加载配置
-  lazyLoad: {
-    enabled: true,           // 是否启用延迟加载
-    threshold: 200,          // 预加载阈值（像素）
-    placeholder: '/medias/featureimages/0.jpg', // 图片加载前的占位图
-    effect: 'fadeIn',        // 图片加载效果
-    effectTime: 300          // 效果持续时间（毫秒）
-  },
-  
-  // 资源优化配置
-  resources: {
-    // 预加载关键资源
-    preload: [
-      // 字体和关键CSS
-      { type: 'style', href: '/css/matery.css' },
-      { type: 'style', href: '/css/my.css' }
-    ],
-    // 预连接常用域名
-    preconnect: [
-      'https://cdn.jsdelivr.net',
-      'https://fonts.googleapis.com'
-    ],
-    // 延迟加载非关键资源
-    defer: [
-      '/libs/others/sakura.js',
-      '/libs/others/clicklove.js',
-      '/libs/others/star.js',
-      '/libs/others/snow.js'
-    ]
-  },
-  
-  // 缓存策略
-  cache: {
-    enabled: true,
-    // 本地存储配置
-    localStorage: {
-      enabled: true,
-      expires: 86400 * 7 // 7天过期（秒）
+window.BLOG_PERFORMANCE_CONFIG = {
+    // 全局开关
+    enableOptimizations: true,  // 是否启用所有性能优化
+    
+    // 资源加载优化
+    resources: {
+        lazyLoad: true,           // 是否启用图片和iframe懒加载
+        preload: {                // 预加载关键资源
+            enabled: true,
+            criticalCSS: true,    // 是否内联关键CSS
+            fonts: true           // 是否预加载字体文件
+        },
+        defer: {                  // 延迟加载非关键资源
+            enabled: true,
+            thirdPartyScripts: true,  // 是否延迟加载第三方脚本
+            nonCriticalCSS: true      // 是否延迟加载非关键CSS
+        }
     },
-    // 搜索数据缓存
-    searchCache: {
-      enabled: true,
-      expires: 86400 // 1天过期（秒）
-    }
-  },
-  
-  // 动画优化
-  animations: {
-    reducedMotion: 'auto', // auto, always, never
-    disableOnMobile: true, // 在移动设备上禁用复杂动画
-    useGPU: true,          // 使用GPU加速
-    limitAnimations: true   // 限制同时运行的动画数量
-  },
-  
-  // 代码分割配置
-  codeSplitting: {
-    enabled: true,
-    // 按需加载的功能模块
-    modules: [
-      { name: 'search', path: '/js/search.js', loadCondition: '.search-form' },
-      { name: 'gallery', path: '/libs/lightGallery/js/lightgallery-all.min.js', loadCondition: '.gallery' },
-      { name: 'comments', path: '/libs/valine/Valine.min.js', loadCondition: '#vcomments' }
-    ]
-  }
-};
-
-// 根据用户设备和网络状况自动调整配置
-function adjustConfigForUserEnvironment() {
-  // 检测网络状况
-  if (navigator.connection) {
-    const connection = navigator.connection;
     
-    // 在慢网络下减少预加载
-    if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-      PerformanceConfig.lazyLoad.threshold = 50;
-      PerformanceConfig.animations.disableOnMobile = true;
-    }
+    // 图片优化
+    images: {
+        lazyLoad: true,           // 是否启用图片懒加载
+        lowQualityPreview: true,  // 是否使用低质量图片预览
+        webp: true,               // 如果浏览器支持，是否使用WebP格式
+        responsiveImages: true,   // 是否使用响应式图片
+        lazyLoadThreshold: '200px' // 懒加载阈值
+    },
     
-    // 在数据保护模式下减少加载内容
-    if (connection.saveData) {
-      PerformanceConfig.resources.preload = [];
-      PerformanceConfig.animations.disableOnMobile = true;
-    }
-  }
-  
-  // 检测设备性能
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    PerformanceConfig.animations.reducedMotion = 'always';
-  }
-}
-
-// 初始化性能优化
-function initPerformanceOptimizations() {
-  adjustConfigForUserEnvironment();
-  
-  // 应用预连接
-  if (PerformanceConfig.resources.preconnect.length > 0) {
-    PerformanceConfig.resources.preconnect.forEach(url => {
-      const link = document.createElement('link');
-      link.rel = 'preconnect';
-      link.href = url;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
-    });
-  }
-  
-  // 注册延迟加载
-  if (PerformanceConfig.lazyLoad.enabled) {
-    document.addEventListener('DOMContentLoaded', setupLazyLoading);
-  }
-  
-  // 设置代码分割
-  if (PerformanceConfig.codeSplitting.enabled) {
-    document.addEventListener('DOMContentLoaded', setupCodeSplitting);
-  }
-}
-
-// 设置延迟加载
-function setupLazyLoading() {
-  const lazyImages = document.querySelectorAll('img[data-src]');
-  const lazyIframes = document.querySelectorAll('iframe[data-src]');
-  
-  if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          if (img.dataset.srcset) {
-            img.srcset = img.dataset.srcset;
-          }
-          img.classList.add('loaded');
-          observer.unobserve(img);
-        }
-      });
-    }, {
-      rootMargin: `${PerformanceConfig.lazyLoad.threshold}px 0px`
-    });
+    // JavaScript优化
+    javascript: {
+        debounce: {               // 防抖设置
+            enabled: true,
+            searchDelay: 250,      // 搜索输入防抖延迟（毫秒）
+            scrollDelay: 100,      // 滚动事件防抖延迟（毫秒）
+            resizeDelay: 250       // 窗口调整事件防抖延迟（毫秒）
+        },
+        asyncLoading: true,       // 是否异步加载JS文件
+        codeOptimization: true,   // 是否启用代码优化（减少DOM操作等）
+        useWebWorkers: true,      // 是否使用Web Workers处理复杂计算
+        useRequestIdleCallback: true // 是否使用requestIdleCallback进行非关键操作
+    },
     
-    lazyImages.forEach(img => imageObserver.observe(img));
+    // CSS优化
+    css: {
+        reduceAnimations: false,  // 是否减少动画效果（对于低端设备）
+        optimizeSelectors: true,  // 是否优化CSS选择器
+        useWillChange: true,      // 是否使用will-change属性
+        useContainment: true,     // 是否使用CSS containment
+        useGPUAcceleration: true  // 是否使用GPU加速
+    },
     
-    const iframeObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const iframe = entry.target;
-          iframe.src = iframe.dataset.src;
-          iframe.classList.add('loaded');
-          observer.unobserve(iframe);
-        }
-      });
-    }, {
-      rootMargin: `${PerformanceConfig.lazyLoad.threshold}px 0px`
-    });
+    // 缓存策略
+    caching: {
+        localStorage: true,        // 是否使用localStorage缓存数据
+        sessionStorage: true,      // 是否使用sessionStorage缓存临时数据
+        indexedDB: true,          // 是否使用IndexedDB缓存大量数据
+        cacheAPI: true            // 是否使用Cache API缓存资源
+    },
     
-    lazyIframes.forEach(iframe => iframeObserver.observe(iframe));
-  } else {
-    // 回退方案：简单的延迟加载
-    setTimeout(() => {
-      lazyImages.forEach(img => {
-        img.src = img.dataset.src;
-        if (img.dataset.srcset) {
-          img.srcset = img.dataset.srcset;
-        }
-      });
-      
-      lazyIframes.forEach(iframe => {
-        iframe.src = iframe.dataset.src;
-      });
-    }, 1000);
-  }
-}
-
-// 设置代码分割
-function setupCodeSplitting() {
-  PerformanceConfig.codeSplitting.modules.forEach(module => {
-    if (document.querySelector(module.loadCondition)) {
-      const script = document.createElement('script');
-      script.src = module.path;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  });
-}
-
-// 初始化
-initPerformanceOptimizations();
-
-// 导出配置供其他脚本使用
-window.PerformanceConfig = PerformanceConfig;
+    // 性能监控
+    monitoring: {
+        enabled: true,            // 是否启用性能监控
+        logToConsole: true,       // 是否在控制台输出性能日志
+        sampleRate: 10,           // 采样率（百分比）
+        reportURI: '',            // 性能数据上报地址（如果需要）
+        trackResources: true,     // 是否跟踪资源加载性能
+        trackFirstPaint: true,    // 是否跟踪首次绘制时间
+        trackLayoutShifts: true   // 是否跟踪布局
