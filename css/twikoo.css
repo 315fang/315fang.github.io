@@ -7,13 +7,11 @@
     padding: 20px;
     margin-top: 30px;
     background-color: #2d2d2d;
-    transition: all 0.3s ease;
     position: relative;
 }
 
 #twikoo-wrap:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
 }
 
 /* 评论标题样式 */
@@ -21,7 +19,7 @@
     margin-top: 40px;
     padding: 10px 15px;
     border-radius: 8px 8px 0 0;
-    background: linear-gradient(135deg, #87CEFA, #B0E0E6);
+    background: linear-gradient(135deg, #808080, #A9A9A9);
     color: white !important;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -50,13 +48,13 @@
 }
 
 .tk-input:focus {
-    border-color: #87CEFA !important;
-    box-shadow: 0 0 8px rgba(135, 206, 250, 0.4) !important;
+    border-color: #808080 !important;
+    box-shadow: 0 0 8px rgba(128, 128, 128, 0.4) !important;
 }
 
 /* 评论按钮样式 */
 .tk-submit {
-    background: linear-gradient(135deg, #87CEFA, #B0E0E6) !important;
+    background: linear-gradient(135deg, #808080, #A9A9A9) !important;
     border-radius: 20px !important;
     padding: 8px 20px !important;
     color: white !important;
@@ -69,7 +67,7 @@
 .tk-submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
-    background: linear-gradient(135deg, #B0E0E6, #87CEFA) !important;
+    background: linear-gradient(135deg, #A9A9A9, #808080) !important;
 }
 
 /* 评论列表样式 */
@@ -82,30 +80,28 @@
     padding: 15px;
     margin-bottom: 15px;
     background-color: #333;
-    transition: all 0.3s ease;
     border-left: 3px solid #87CEFA;
 }
 
 .tk-comment:hover {
-    background-color: #3a3a3a;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* 评论者头像 */
 .tk-avatar {
     border-radius: 50%;
-    border: 2px solid #B0E0E6;
+    border: 2px solid #A9A9A9;
     transition: all 0.3s ease;
 }
 
 .tk-avatar:hover {
     transform: rotate(360deg);
-    border-color: #87CEFA;
+    border-color: #808080;
 }
 
 /* 评论者名称 */
 .tk-nick {
-    color: #5f9ea0 !important;
+    color: #696969 !important;
     font-weight: bold;
     font-size: 1.1em;
 }
@@ -124,12 +120,12 @@
 }
 
 .tk-action {
-    color: #87CEFA !important;
+    color: #808080 !important;
     transition: all 0.3s ease;
 }
 
 .tk-action:hover {
-    color: #5f9ea0 !important;
+    color: #696969 !important;
     text-decoration: underline;
 }
 
@@ -154,7 +150,7 @@
 
 .dark-mode .tk-comment {
     background-color: rgba(40, 40, 40, 0.7);
-    border-left: 3px solid #5f9ea0;
+    border-left: 3px solid #696969;
 }
 
 .dark-mode .tk-content {
@@ -162,7 +158,7 @@
 }
 
 .dark-mode .tk-nick {
-    color: #87CEFA !important;
+    color: #808080 !important;
 }
 
 .dark-mode .tk-reply-form {
@@ -214,7 +210,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #87CEFA;
+    background-color: #808080;
     opacity: 0.6;
     position: absolute;
     top: 0;
@@ -224,7 +220,7 @@
 
 .double-bounce2 {
     animation-delay: -1.0s;
-    background-color: #B0E0E6;
+    background-color: #A9A9A9;
 }
 
 @keyframes sk-bounce {
