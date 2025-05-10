@@ -3,11 +3,11 @@
   <title>我的博客</title>
   
   <subtitle>记录生活，分享技术</subtitle>
-  <link href="https://github.com/315fang/315fang.github.io/atom.xml" rel="self"/>
+  <link href="https://315fang.github.io/atom.xml" rel="self"/>
   
-  <link href="https://github.com/315fang/315fang.github.io/"/>
+  <link href="https://315fang.github.io/"/>
   <updated>2025-05-02T03:36:30.046Z</updated>
-  <id>https://github.com/315fang/315fang.github.io/</id>
+  <id>https://315fang.github.io/</id>
   
   <author>
     <name>锚点</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/315fang/315fang.github.io/2025/05/02/hello-world/"/>
-    <id>https://github.com/315fang/315fang.github.io/2025/05/02/hello-world/</id>
+    <link href="https://315fang.github.io/2025/05/02/hello-world/"/>
+    <id>https://315fang.github.io/2025/05/02/hello-world/</id>
     <published>2025-05-02T03:41:56.107Z</published>
     <updated>2025-05-02T03:36:30.046Z</updated>
     
