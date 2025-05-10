@@ -726,20 +726,21 @@
 
 <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.all.min.js"></script>
 <script>
-    console.log('twikoo init 即将执行');
-    console.log('twikoo serverURL:', 'https://super-gelato-2c17f4.netlify.app/.netlify/functions/twikoo');
-    twikoo.init({
-        envId: 'https://super-gelato-2c17f4.netlify.app/.netlify/functions/twikoo',
-        el: '#tcomments',
-        path: window.location.pathname
-    }).then(function () {
-        console.log('twikoo init 完成');
-        var tkInputs = document.querySelector('#tcomments').getElementsByTagName('input');
-        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
-            if (tkInputs[tkInputsIndex]) {
-                tkInputs[tkInputsIndex].classList.add('browser-default');
+    window.addEventListener('load', function() {
+        twikoo.init({
+            envId: 'https://super-gelato-2c17f4.netlify.app/.netlify/functions/twikoo',  // 使用envId替代serverURL
+            el: '#tcomments',
+            path: window.location.pathname
+        }).then(function () {
+            var tkInputs = document.querySelector('#tcomments').getElementsByTagName('input');
+            for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
+                if (tkInputs[tkInputsIndex]) {
+                    tkInputs[tkInputsIndex].classList.add('browser-default');
+                }
             }
-        }
+        }).catch(function(error) {
+            console.error('Twikoo 初始化失败:', error);
+        });
     });
 </script>
 
