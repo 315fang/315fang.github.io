@@ -1,0 +1,9 @@
+/* Custom styles */
+
+/* Add hover effect for links */
+a:hover {
+  color: #add8e6; /* Change color to light blue on hover */
+  transition: color 0.2s ease-in-out; /* Transition the color property */
+}
+
+/* Add other custom styles below */
