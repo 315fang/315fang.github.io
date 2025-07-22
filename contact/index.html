@@ -691,9 +691,10 @@
 <script>
     window.addEventListener('load', function() {
         twikoo.init({
-            envId: 'https://super-gelato-2c17f4.netlify.app/.netlify/functions/twikoo',  // 使用envId替代serverURL
+            envId: 'https://super-gelato-2c17f4.netlify.app/.netlify/functions/twikoo',  // 使用正确的envId配置
             el: '#tcomments',
-            path: window.location.pathname
+            path: window.location.pathname,
+            lang: 'zh-CN'
         }).then(function () {
             var tkInputs = document.querySelector('#tcomments').getElementsByTagName('input');
             for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
@@ -701,6 +702,7 @@
                     tkInputs[tkInputsIndex].classList.add('browser-default');
                 }
             }
+            console.log('Twikoo 评论系统初始化成功');
         }).catch(function(error) {
             console.error('Twikoo 初始化失败:', error);
         });
