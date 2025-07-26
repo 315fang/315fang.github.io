@@ -6,7 +6,7 @@
   <link href="https://315fang.github.io/atom.xml" rel="self"/>
   
   <link href="https://315fang.github.io/"/>
-  <updated>2025-05-02T03:36:30.046Z</updated>
+  <updated>2025-07-26T04:09:21.858Z</updated>
   <id>https://315fang.github.io/</id>
   
   <author>
@@ -17,30 +17,22 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
+    <title></title>
     <link href="https://315fang.github.io/2025/05/02/hello-world/"/>
     <id>https://315fang.github.io/2025/05/02/hello-world/</id>
     <published>2025-05-02T03:41:56.107Z</published>
-    <updated>2025-05-02T03:36:30.046Z</updated>
+    <updated>2025-07-26T04:09:21.858Z</updated>
     
     
-    <summary type="html">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+    <summary type="html">大家好，我是锚点。很荣幸能以这样的方式和大家相遇，也期待能和同频的朋友同行一段路。请允许先简单聊聊我自己：
 
-Quick Start
-Create a new post
-1
+关于探索：在好奇里扎根
+我是个对世界充满好奇的普通人，目前正沉下心研究大模型与区块链——这些前沿领域像待解的谜题，总让人忍不住想靠近。
+投资领域里，巴菲特、彼得·蒂尔这些“殊途同归”的高手一直是我的研究对象，也常琢磨那些能读懂他们的人（比如大道），试图从不同路径里找共通的逻辑。
+读书是我的日常，从不挑食：上至经济政治的宏观脉络，下至生物心理的微观肌理，偶尔掺点美术或古典文化，不同领域的知识混搭，反而像拼图一样，慢慢拼出更立体的世界。
 
-
-$ hexo new &quot;My New Post&quot;
-
-
-More info: Writing
-
-Run server
-1
-
-
-$ hexo s</summary>
+关于身体：在自律里找平衡
+饮食上，正在实践12小时</summary>
     
     
     
