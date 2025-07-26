@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://315fang.github.io/2025/05/02/hello-world/</loc>
+    <loc>https://315fang.github.io/2024/01/01/hello-world/</loc>
     
     <lastmod>2025-07-26</lastmod>
     
@@ -119,10 +119,38 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://315fang.github.io/tags/%E4%B8%96%E7%95%8C/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://315fang.github.io/tags/%E8%87%AA%E5%B7%B1/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://315fang.github.io/tags/%E9%94%9A%E7%82%B9/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://315fang.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://315fang.github.io/categories/%E6%95%85%E4%BA%8B%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
