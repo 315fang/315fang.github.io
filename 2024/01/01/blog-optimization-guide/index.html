@@ -408,7 +408,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2025-07-22
+                    2025-07-28
                 </div>
                 
 
@@ -892,31 +892,14 @@
         <span>评论</span>
     </div>
     <div class="card-content" style="display: grid">
-        <div id="tcomments"></div>
+        <div id="tcomment"></div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.all.min.js"></script>
-<script>
-    window.addEventListener('load', function() {
-        twikoo.init({
-            envId: 'https://super-gelato-2c17f4.netlify.app/.netlify/functions/twikoo',  // 使用正确的envId配置
-            el: '#tcomments',
-            path: window.location.pathname,
-            lang: 'zh-CN'
-        }).then(function () {
-            var tkInputs = document.querySelector('#tcomments').getElementsByTagName('input');
-            for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
-                if (tkInputs[tkInputsIndex]) {
-                    tkInputs[tkInputsIndex].classList.add('browser-default');
-                }
-            }
-            console.log('Twikoo 评论系统初始化成功');
-        }).catch(function(error) {
-            console.error('Twikoo 初始化失败:', error);
-        });
-    });
-</script>
+
+<!-- 静默加载器 - 无UI干扰 -->
+<script src="/js/twikoo-silent-loader.js"></script>
+
 
     
 
@@ -925,9 +908,72 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/05/02/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/19.jpg" class="responsive-img" alt="你好，世界">
+                        
+                        <span class="card-title">你好，世界</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            大家好，我是锚点。很荣幸能以这样的方式和大家相遇，也期待能和同频的朋友同行一段路。请允许先简单聊聊我自己：
+
+关于探索：在好奇里扎根
+我是个对世界充满好奇的普通人，目前正沉下心研究大模型与区块链——这些前沿领域像待解的谜题，总让人忍不住想靠
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-05-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%85%E4%BA%8B%E5%88%86%E4%BA%AB/" class="post-category">
+                                    故事分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%96%E7%95%8C/">
+                        <span class="chip bg-color">世界</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E5%B7%B1/">
+                        <span class="chip bg-color">自己</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%94%9A%E7%82%B9/">
+                        <span class="chip bg-color">锚点</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2024/01/01/blog-optimization-guide/">
@@ -985,70 +1031,6 @@
                     
                     <a href="/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">
                         <span class="chip bg-color">用户体验</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/01/01/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/19.jpg" class="responsive-img" alt="你好，世界">
-                        
-                        <span class="card-title">你好，世界</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            大家好，我是锚点。很荣幸能以这样的方式和大家相遇，也期待能和同频的朋友同行一段路。请允许先简单聊聊我自己：
-
-关于探索：在好奇里扎根
-我是个对世界充满好奇的普通人，目前正沉下心研究大模型与区块链——这些前沿领域像待解的谜题，总让人忍不住想靠
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-01
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%85%E4%BA%8B%E5%88%86%E4%BA%AB/" class="post-category">
-                                    故事分享
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%96%E7%95%8C/">
-                        <span class="chip bg-color">世界</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%87%AA%E5%B7%B1/">
-                        <span class="chip bg-color">自己</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%94%9A%E7%82%B9/">
-                        <span class="chip bg-color">锚点</span>
                     </a>
                     
                 </div>

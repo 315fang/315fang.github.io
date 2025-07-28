@@ -6,7 +6,7 @@
   <link href="https://315fang.github.io/atom.xml" rel="self"/>
   
   <link href="https://315fang.github.io/"/>
-  <updated>2025-07-22T11:54:09.492Z</updated>
+  <updated>2025-07-27T16:44:27.008Z</updated>
   <id>https://315fang.github.io/</id>
   
   <author>
@@ -17,11 +17,76 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>7/27复盘</title>
+    <link href="https://315fang.github.io/2025/07/28/7.27/"/>
+    <id>https://315fang.github.io/2025/07/28/7.27/</id>
+    <published>2025-07-27T16:31:43.005Z</published>
+    <updated>2025-07-27T16:44:27.008Z</updated>
+    
+    
+    <summary type="html">锚点7/27复盘：在对标与沉心里筑路
+1. 对标：向顶尖靠近，让积累有方向
+一直觉得，对标世界顶尖的人、拆解他们的思维与路径，再沉下心积累，是最扎实的成长方法。
+最近在琢磨：能不能做一个「追踪牛人」的工具？不仅收录他们的轨迹，还要附上有洞见的解读，甚至留出让自己（或同频者）做人工批注的空间——像带着放大镜学习，把别人的经验变成自己的养分。 
+
+2. 时间：用热爱浇筑的护城河，才够坚固
+时间本身就是最强大的护城河，但得加上「热爱」这味催化剂。就像护城河里不仅有水，还要筑起连对手都难以撼动的壁垒——当你能说出「这件事我专注了15年」，这种沉淀本身就自带威慑力。
+落地的思路是：像GPU并行处理任务一</summary>
+    
+    
+    
+    <category term="故事分享" scheme="https://315fang.github.io/categories/%E6%95%85%E4%BA%8B%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="博客" scheme="https://315fang.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="世界" scheme="https://315fang.github.io/tags/%E4%B8%96%E7%95%8C/"/>
+    
+    <category term="自己" scheme="https://315fang.github.io/tags/%E8%87%AA%E5%B7%B1/"/>
+    
+    <category term="锚点" scheme="https://315fang.github.io/tags/%E9%94%9A%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你好，世界</title>
+    <link href="https://315fang.github.io/2025/05/02/hello-world/"/>
+    <id>https://315fang.github.io/2025/05/02/hello-world/</id>
+    <published>2025-05-02T03:41:56.107Z</published>
+    <updated>2025-07-26T04:13:41.374Z</updated>
+    
+    
+    <summary type="html">大家好，我是锚点。很荣幸能以这样的方式和大家相遇，也期待能和同频的朋友同行一段路。请允许先简单聊聊我自己：
+
+关于探索：在好奇里扎根
+我是个对世界充满好奇的普通人，目前正沉下心研究大模型与区块链——这些前沿领域像待解的谜题，总让人忍不住想靠近。
+投资领域里，巴菲特、彼得·蒂尔这些“殊途同归”的高手一直是我的研究对象，也常琢磨那些能读懂他们的人（比如大道），试图从不同路径里找共通的逻辑。
+读书是我的日常，从不挑食：上至经济政治的宏观脉络，下至生物心理的微观肌理，偶尔掺点美术或古典文化，不同领域的知识混搭，反而像拼图一样，慢慢拼出更立体的世界。
+
+关于身体：在自律里找平衡
+饮食上，正在实践12小时</summary>
+    
+    
+    
+    <category term="故事分享" scheme="https://315fang.github.io/categories/%E6%95%85%E4%BA%8B%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="博客" scheme="https://315fang.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="世界" scheme="https://315fang.github.io/tags/%E4%B8%96%E7%95%8C/"/>
+    
+    <category term="自己" scheme="https://315fang.github.io/tags/%E8%87%AA%E5%B7%B1/"/>
+    
+    <category term="锚点" scheme="https://315fang.github.io/tags/%E9%94%9A%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>优化后的博客使用指南</title>
     <link href="https://315fang.github.io/2024/01/01/blog-optimization-guide/"/>
     <id>https://315fang.github.io/2024/01/01/blog-optimization-guide/</id>
     <published>2023-12-31T16:00:00.000Z</published>
-    <updated>2025-07-22T11:54:09.492Z</updated>
+    <updated>2025-07-27T23:08:03.926Z</updated>
     
     
     <summary type="html">🚀 博客全方位优化完成！
@@ -51,39 +116,6 @@
     <category term="性能" scheme="https://315fang.github.io/tags/%E6%80%A7%E8%83%BD/"/>
     
     <category term="用户体验" scheme="https://315fang.github.io/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你好，世界</title>
-    <link href="https://315fang.github.io/2024/01/01/hello-world/"/>
-    <id>https://315fang.github.io/2024/01/01/hello-world/</id>
-    <published>2023-12-31T16:00:00.000Z</published>
-    <updated>2025-07-26T04:12:32.583Z</updated>
-    
-    
-    <summary type="html">大家好，我是锚点。很荣幸能以这样的方式和大家相遇，也期待能和同频的朋友同行一段路。请允许先简单聊聊我自己：
-
-关于探索：在好奇里扎根
-我是个对世界充满好奇的普通人，目前正沉下心研究大模型与区块链——这些前沿领域像待解的谜题，总让人忍不住想靠近。
-投资领域里，巴菲特、彼得·蒂尔这些“殊途同归”的高手一直是我的研究对象，也常琢磨那些能读懂他们的人（比如大道），试图从不同路径里找共通的逻辑。
-读书是我的日常，从不挑食：上至经济政治的宏观脉络，下至生物心理的微观肌理，偶尔掺点美术或古典文化，不同领域的知识混搭，反而像拼图一样，慢慢拼出更立体的世界。
-
-关于身体：在自律里找平衡
-饮食上，正在实践12小时</summary>
-    
-    
-    
-    <category term="故事分享" scheme="https://315fang.github.io/categories/%E6%95%85%E4%BA%8B%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="博客" scheme="https://315fang.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="世界" scheme="https://315fang.github.io/tags/%E4%B8%96%E7%95%8C/"/>
-    
-    <category term="自己" scheme="https://315fang.github.io/tags/%E8%87%AA%E5%B7%B1/"/>
-    
-    <category term="锚点" scheme="https://315fang.github.io/tags/%E9%94%9A%E7%82%B9/"/>
     
   </entry>
   
