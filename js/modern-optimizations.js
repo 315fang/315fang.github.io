@@ -55,17 +55,20 @@ class PerformanceOptimizer {
 
   // Service Worker注册
   setupServiceWorker() {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('SW registered: ', registration);
-          })
-          .catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-          });
-      });
-    }
+    if (!('serviceWorker' in navigator)) return;
+
+    const meta = document.querySelector('meta[name="fox-sw-enabled"]');
+    if (meta && meta.content !== 'true') return;
+
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('SW registered: ', registration);
+        })
+        .catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
   }
 
   // 关键资源预加载
@@ -77,6 +80,7 @@ class PerformanceOptimizer {
     ];
 
     criticalResources.forEach(resource => {
+      if (document.head.querySelector(`link[rel="preload"][href="${resource}"]`)) return;
       const link = document.createElement('link');
       link.rel = 'preload';
       link.href = resource;
@@ -175,20 +179,49 @@ class SearchOptimizer {
       return;
     }
 
-    const html = results.map(result => `
+    const safeQuery = String(query || '').slice(0, 50);
+    const html = results.map(result => {
+      const url = this.sanitizeUrl(result.url);
+      return `
       <div class="search-result-item">
-        <h3><a href="${result.url}">${this.highlightText(result.title, query)}</a></h3>
-        <p>${this.highlightText(this.truncateText(result.content, 150), query)}</p>
-        <span class="search-result-date">${result.date}</span>
+        <h3><a href="${url}">${this.highlightText(result.title, safeQuery)}</a></h3>
+        <p>${this.highlightText(this.truncateText(result.content, 150), safeQuery)}</p>
+        <span class="search-result-date">${this.escapeHtml(result.date)}</span>
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     container.innerHTML = html;
   }
 
+  sanitizeUrl(url) {
+    const u = String(url || '').trim();
+    if (u.startsWith('/') || u.startsWith('http://') || u.startsWith('https://')) {
+      return u.replace(/"/g, '%22');
+    }
+    return '#';
+  }
+
+  escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  escapeRegExp(str) {
+    return String(str || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   highlightText(text, query) {
-    const regex = new RegExp(`(${query})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
+    const safeText = this.escapeHtml(text);
+    const safeQuery = this.escapeHtml(query);
+    if (!safeQuery.trim()) return safeText;
+
+    const regex = new RegExp(`(${this.escapeRegExp(safeQuery)})`, 'gi');
+    return safeText.replace(regex, '<mark>$1</mark>');
   }
 
   truncateText(text, length) {

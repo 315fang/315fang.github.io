@@ -7,18 +7,73 @@
     <meta name="keywords" content="标签, 博客,技术,生活,编程,前端,后端,全栈开发">
     <meta name="description" content="一个类似于图书馆的地方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="fox-sw-enabled" content="true">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://315fang.github.io/tags/">
+    <meta property="og:title" content="标签 | usut">
+    <meta property="og:description" content="一个类似于图书馆的地方">
+    <meta property="og:image" content="https://315fang.github.io/medias/logo.png">
+    <meta property="og:site_name" content="usut">
+    <meta property="og:locale" content="zh-CN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://315fang.github.io/tags/">
+    <meta name="twitter:title" content="标签 | usut">
+    <meta name="twitter:description" content="一个类似于图书馆的地方">
+    <meta name="twitter:image" content="https://315fang.github.io/medias/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://315fang.github.io/tags/">
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>标签 | usut</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+
+    
+        
+            
+            <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+        
+            
+            <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        
+            
+            <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        
+            
+            <link rel="dns-prefetch" href="//www.google-analytics.com">
+        
+            
+            <link rel="dns-prefetch" href="//hm.baidu.com">
+        
+        
+            <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        
+            <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        
+        
+            
+            
+            <link rel="preload" href="/css/critical.css" as="style">
+        
+            
+            
+            <link rel="preload" href="/js/advanced-image-optimizer.js" as="script">
+        
+    
+
     
     <style>
         body{
@@ -643,172 +698,7 @@
 </div>
     </div>
 
-<!-- New Music Player START -->
-<div class="music-player fixed">
-    <div class="cover-container">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/music-cover.jpg" class="cover" id="music-cover">
-    </div>
-    <div class="player-controls">
-        <audio id="music-player" loop>
-            <source src="/medias/background.mp3" type="audio/mpeg">
-        </audio>
-        <div class="progress-container">
-            <input type="range" id="progress-bar" min="0" max="100" value="0">
-            <div class="time-display">
-                <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
-            </div>
-        </div>
-        <div class="buttons">
-            <button id="play-btn"><i class="fas fa-play"></i></button>
-            <button id="volume-btn"><i class="fas fa-volume-up"></i></button>
-            <input type="range" id="volume-control" min="0" max="100" value="50">
-        </div>
-    </div>
-</div>
 
-<style>
-.music-player.fixed {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999; /* 确保在最上层 */
-    display: flex;
-    align-items: center;
-    background: rgba(255,255,255,0.8);
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-.cover-container {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    overflow: hidden;
-    border-radius: 50%;
-}
-.cover {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: rotate 10s linear infinite;
-    animation-play-state: paused;
-}
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-.player-controls {
-    flex: 1;
-}
-.progress-container {
-    margin: 5px 0;
-}
-.progress-container input[type="range"] {
-    width: 100%;
-    cursor: pointer;
-}
-.buttons {
-    display: flex;
-    align-items: center;
-}
-.buttons button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 0 5px;
-    color: #333;
-}
-.buttons input[type="range"] {
-    width: 80px;
-    cursor: pointer;
-}
-.time-display {
-    font-size: 12px;
-    color: #555;
-    text-align: center;
-}
-</style>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const musicPlayer = document.getElementById('music-player');
-    const playBtn = document.getElementById('play-btn');
-    const musicCover = document.getElementById('music-cover');
-    const progressBar = document.getElementById('progress-bar');
-    const currentTimeDisplay = document.getElementById('current-time');
-    const totalTimeDisplay = document.getElementById('total-time');
-    const volumeBtn = document.getElementById('volume-btn');
-    const volumeControl = document.getElementById('volume-control');
-
-    let isPlaying = false;
-
-    function togglePlay() {
-        if (isPlaying) {
-            musicPlayer.pause();
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-            musicCover.style.animationPlayState = 'paused';
-        } else {
-            musicPlayer.play();
-            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            musicCover.style.animationPlayState = 'running';
-        }
-        isPlaying = !isPlaying;
-    }
-
-    function updateProgress() {
-        const { duration, currentTime } = musicPlayer;
-        const progressPercent = (currentTime / duration) * 100;
-        progressBar.value = progressPercent;
-        currentTimeDisplay.textContent = formatTime(currentTime);
-        if (!isNaN(duration)) {
-            totalTimeDisplay.textContent = formatTime(duration);
-        }
-    }
-
-    function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-    }
-
-    function toggleMute() {
-        musicPlayer.muted = !musicPlayer.muted;
-        volumeBtn.innerHTML = musicPlayer.muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
-    }
-
-    function setVolume() {
-        musicPlayer.volume = volumeControl.value / 100;
-         if (musicPlayer.volume === 0) {
-            volumeBtn.innerHTML = '<i class="fas fa-volume-off"></i>';
-        } else if (musicPlayer.volume < 0.5) {
-            volumeBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
-        } else {
-            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-        }
-    }
-
-    if (playBtn) playBtn.addEventListener('click', togglePlay);
-    if (musicPlayer) musicPlayer.addEventListener('timeupdate', updateProgress);
-    if (progressBar) progressBar.addEventListener('input', () => { 
-        const duration = musicPlayer.duration;
-        if (musicPlayer && !isNaN(duration)) {
-             musicPlayer.currentTime = (progressBar.value / 100) * duration;
-        }
-    });
-    if (volumeBtn) volumeBtn.addEventListener('click', toggleMute);
-    if (volumeControl) volumeControl.addEventListener('input', setVolume);
-
-    if (musicPlayer) {
-        musicPlayer.volume = volumeControl ? volumeControl.value / 100 : 0.5;
-        musicPlayer.addEventListener('loadedmetadata', () => {
-            if (!isNaN(musicPlayer.duration)) {
-                 totalTimeDisplay.textContent = formatTime(musicPlayer.duration);
-            }
-        });
-    }
-});
-</script>
-<!-- New Music Player END -->
 
 </footer>
 
@@ -951,13 +841,15 @@ $(function () {
 </div>
 
 
+    <!-- 核心布局库 - 同步加载 -->
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-    <script src="/js/logo-audio.js"></script>
+    <!-- 非关键库 - 延迟加载提升首屏性能 -->
+    <script src="/libs/aos/aos.js" defer></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js" defer></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js" defer></script>
+    <script src="/js/matery.js" defer></script>
+    <script src="/js/logo-audio.js" defer></script>
 
     
 

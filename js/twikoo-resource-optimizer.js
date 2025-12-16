@@ -40,6 +40,9 @@ class TwikooResourceOptimizer {
   setupCaching() {
     if (!this.cacheEnabled || !('serviceWorker' in navigator)) return;
 
+    const meta = document.querySelector('meta[name="fox-sw-enabled"]');
+    if (meta && meta.content !== 'true') return;
+
     // 注册Service Worker进行缓存
     navigator.serviceWorker.register('/sw.js').then(registration => {
       console.log('✅ Service Worker注册成功，Twikoo资源将被缓存');
