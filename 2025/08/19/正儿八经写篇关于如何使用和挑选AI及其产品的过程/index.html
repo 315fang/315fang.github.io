@@ -860,7 +860,8 @@
 </style>
 
 <div class="card twikoo-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling"
+        style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -870,10 +871,17 @@
 </div>
 
 
-<!-- 静默加载器 - 无UI干扰 -->
-<script src="/js/twikoo-silent-loader.js"></script>
-
-
+        <!-- 传统Twikoo加载 -->
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.all.min.js"></script>
+        <script>
+            twikoo.init({
+                envId: 'https://super-gelato-2c17f4.netlify.app/.netlify/functions/twikoo',
+                el: '#tcomment',
+                path: '2025/08/19/正儿八经写篇关于如何使用和挑选AI及其产品的过程/',
+                lang: 'zh-CN'
+            });
+        </script>
+        
     
 
     
