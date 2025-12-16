@@ -6,10 +6,11 @@ User-agent: *
 Allow: /
 
 # 禁止爬取不必要的静态资源目录
-Disallow: /js/
-Disallow: /css/
-Disallow: /libs/
-Disallow: /medias/
+# (已优化：Google等现代搜索引擎需要访问JS/CSS以正确渲染页面)
+# Disallow: /js/
+# Disallow: /css/
+# Disallow: /libs/
+# Disallow: /medias/
 
 # 禁止爬取管理和搜索相关页面
 Disallow: /admin/
@@ -18,9 +19,9 @@ Disallow: /search/
 # Google爬虫特定规则
 User-agent: Googlebot
 Allow: /
-Disallow: /js/
-Disallow: /css/
-Disallow: /libs/
+# Disallow: /js/
+# Disallow: /css/
+# Disallow: /libs/
 
 # Bing爬虫特定规则
 User-agent: Bingbot
